@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">NutriShop</string>
+    <string name="into_tag">Shop smarter, Eat well, Live better!</string>
+    <string name="welcome">Welcome to</string>
+    <string name="intro_btn">Get Started</string>
+    <string name="logo">Logo</string>
+    <string name="menu_loader"><![CDATA[>]]></string>
+    <string name="categories">Categories</string>
+    <string name="featured_products">Featured Products</string>
+</resources>

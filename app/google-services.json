@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "292858577441",
+    "project_id": "nutrishop-c15c2",
+    "storage_bucket": "nutrishop-c15c2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:292858577441:android:99ec156966add0b0e2d960",
+        "android_client_info": {
+          "package_name": "com.example.nutrishop"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeCmcKmSXGXOvnilUvMuewTaee4pOJK0g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
