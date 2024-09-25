@@ -59,12 +59,12 @@
                 android:layout_width="328dp"
                 android:layout_height="78dp"
                 android:layout_marginHorizontal="32dp"
-                android:layout_marginTop="350dp"
+                android:layout_marginTop="250dp"
                 android:background="@drawable/light_green_bg"
+                android:fontFamily="sans-serif-light"
                 android:text="@string/intro_btn"
                 android:textColor="@color/white"
-                android:textSize="32sp"
-                android:fontFamily="sans-serif-light"/>
+                android:textSize="32sp" />
 
         </LinearLayout>
 

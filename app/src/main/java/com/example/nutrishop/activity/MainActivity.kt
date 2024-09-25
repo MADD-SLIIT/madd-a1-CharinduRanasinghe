@@ -1,21 +1,18 @@
 package com.example.nutrishop.activity
 
 import android.os.Bundle
-import android.provider.MediaStore.Images
 import android.view.View
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
+import com.example.nutrishop.Adapter.CatAdapter
+import com.example.nutrishop.Adapter.FeaturedAdapter
 import com.example.nutrishop.Model.SliderModel
-import com.example.nutrishop.R
-import com.example.nutrishop.SliderAdapter
+import com.example.nutrishop.Adapter.SliderAdapter
 import com.example.nutrishop.ViewModel.MainViewModel
-import com.example.nutrishop.databinding.ActivityIntroBinding
 import com.example.nutrishop.databinding.ActivityMainBinding
 
 class MainActivity : BaseActivity() {
@@ -29,6 +26,8 @@ class MainActivity : BaseActivity() {
 
 
         initBanner()
+        initCategory()
+        initFeatured()
     }
 
     private fun initBanner() {
@@ -58,5 +57,25 @@ class MainActivity : BaseActivity() {
         }
 
 
+    }
+
+    private fun initCategory() {
+        binding.progressBarCategory.visibility = View.VISIBLE
+        viewModel.categories.observe(this, Observer {
+            binding.viewCategory.layoutManager = LinearLayoutManager(this@MainActivity,LinearLayoutManager.HORIZONTAL,false)
+            binding.viewCategory.adapter = CatAdapter(it)
+            binding.progressBarCategory.visibility = View.GONE
+        })
+        viewModel.loadCategory()
+    }
+
+    private fun initFeatured() {
+        binding.progressBarProducts.visibility = View.VISIBLE
+        viewModel.featured.observe(this, Observer {
+            binding.viewFeatured.layoutManager = GridLayoutManager(this@MainActivity,2)
+            binding.viewFeatured.adapter = FeaturedAdapter(it)
+            binding.progressBarProducts.visibility = View.GONE
+        })
+        viewModel.loadFeatured()
     }
 }
