@@ -15,7 +15,7 @@ class SplashActivity : AppCompatActivity() {
 
         // Delay for 3 seconds before navigating to the LoginActivity
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this@SplashActivity, LoginActivity::class.java)
+            val intent = Intent(this@SplashActivity, WelcomeActivity::class.java)
             startActivity(intent)
             finish() // Close the SplashActivity so the user can't navigate back to it
         }, 3000) // 3 seconds delay
