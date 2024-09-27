@@ -16,4 +16,6 @@
     <string name="price">$-</string>
     <string name="welcome_back_to_nutrishop">Welcome back to NutriShop</string>
     <string name="welcome_subtitle">Welcome back to healthy food central</string>
+    <string name="enter_mobile">Enter Mobile</string>
+    <string name="signup">Signup</string>
 </resources>
