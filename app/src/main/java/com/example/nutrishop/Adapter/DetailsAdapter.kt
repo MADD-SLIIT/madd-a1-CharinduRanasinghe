@@ -16,7 +16,7 @@ class DetailsAdapter(val items: MutableList<DetailsModel>) :
         RecyclerView.ViewHolder(binding.root) {
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DetailsAdapter.Viewholder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DetailsAdapter.ViewHolder {
         context = parent.context
         val binding = ViewholderDetailsBinding.inflate(LayoutInflater.from(context), parent, false)
         return Viewholder(binding)
