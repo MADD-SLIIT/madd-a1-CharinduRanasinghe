@@ -69,6 +69,7 @@
 
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/nutList"
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:layout_marginTop="16dp"
@@ -154,7 +155,7 @@
                     android:text="Add to Cart" />
 
                 <ImageButton
-                    android:id="@+id/carBtn"
+                    android:id="@+id/cartBtn"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:background="@color/Green2"

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.FilterActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+
+            <TextView
+                android:id="@+id/priceRangeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price Range"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <EditText
+                    android:id="@+id/minPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Min."
+                    android:layout_weight="1"
+                    android:inputType="number" />
+
+                <View
+                    android:layout_width="16dp"
+                    android:layout_height="match_parent" />
+
+                <EditText
+                    android:id="@+id/maxPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Max."
+                    android:layout_weight="1"
+                    android:inputType="number" />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Star Rating"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+
+                <androidx.appcompat.widget.AppCompatRatingBar
+                    android:id="@+id/starRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:progressTint="#CDDC39"
+                    android:rating="4"
+                    android:stepSize="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4 stars"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp" />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Sugar Rating"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/sugarLow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Low" />
+
+                    <RadioButton
+                        android:id="@+id/sugarMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Medium" />
+
+                    <RadioButton
+                        android:id="@+id/sugarHigh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="High" />
+                </RadioGroup>
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Calorie Range"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+
+            <SeekBar
+                android:id="@+id/calorieSeekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="100"
+                android:progress="75" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Fat Content"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+
+            <SeekBar
+                android:id="@+id/fatSeekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="100"
+                android:progress="50" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Dietary Preference"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/dietaryPreference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Vegan"
+                android:inputType="text"
+                android:layout_marginTop="8dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Others"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/discountCheckbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Discount" />
+
+            <CheckBox
+                android:id="@+id/freeShippingCheckbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Free shipping" />
+
+            <CheckBox
+                android:id="@+id/sameDayDeliveryCheckbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Same day delivery" />
+
+
+            <Button
+                android:id="@+id/confirmButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Confirm"
+                android:backgroundTint="@color/Green1"
+                android:layout_marginTop="16dp" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

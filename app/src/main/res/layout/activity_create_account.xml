@@ -133,16 +133,6 @@
                 android:textStyle="bold" />
 
 
-            <TextView
-                android:id="@+id/becomeSellerLink"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="Not looking to shop? Become a Seller"
-                android:textColor="@color/light_red"
-                android:textSize="14sp" />
-
-
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>

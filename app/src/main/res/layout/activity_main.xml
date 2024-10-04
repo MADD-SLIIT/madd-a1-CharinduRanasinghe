@@ -53,7 +53,24 @@
                     android:layout_width="42dp"
                     android:layout_height="42dp"
                     android:layout_marginEnd="16dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:contentDescription="@string/search"
                     app:srcCompat="@drawable/search_icon" />
+
+                <EditText
+                    android:id="@+id/search_input"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Search..."
+                    android:background="@android:color/transparent"
+                    android:textColor="@android:color/black"
+                    android:visibility="gone"
+                    android:layout_weight="1"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:textColorHint="@color/gray"
+                    android:layout_gravity="center_vertical" />
 
                 <ImageView
                     android:id="@+id/notification_btn"
@@ -260,6 +277,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/cartBtn"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
@@ -276,6 +294,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/filterBtn"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
@@ -287,11 +306,12 @@
                         android:layout_height="22dp"
                         android:layout_gravity="center"
                         android:layout_marginTop="20dp"
-                        app:srcCompat="@drawable/btn_3" />
+                        app:srcCompat="@drawable/btn_4" />
 
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/userBtn"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"

@@ -1,7 +1,15 @@
 package com.example.nutrishop.activity
 
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
+import android.animation.ObjectAnimator
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,22 +20,67 @@ import com.example.nutrishop.Adapter.CatAdapter
 import com.example.nutrishop.Adapter.FeaturedAdapter
 import com.example.nutrishop.Model.SliderModel
 import com.example.nutrishop.Adapter.SliderAdapter
+import com.example.nutrishop.R
 import com.example.nutrishop.ViewModel.MainViewModel
 import com.example.nutrishop.databinding.ActivityMainBinding
 
 class MainActivity : BaseActivity() {
     private val viewModel = MainViewModel()
     private lateinit var binding: ActivityMainBinding
+    private lateinit var searchButton: ImageView
+    private lateinit var searchInput: EditText
+    private var isSearchOpen = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
 
+        searchButton = findViewById(R.id.search_btn)
+        searchInput = findViewById(R.id.search_input)
+
+        searchButton.setOnClickListener {
+            toggleSearch()
+        }
+
+        findViewById<TextView>(R.id.menu_loader1).setOnClickListener {
+            startActivity(Intent(this, CategoriesActivity::class.java))
+        }
+
+
 
         initBanner()
         initCategory()
         initFeatured()
+        initBottomMenu()
+    }
+
+    private fun toggleSearch() {
+        if (isSearchOpen) {
+
+            ObjectAnimator.ofFloat(searchInput, "alpha", 1f, 0f).apply {
+                duration = 300
+                start()
+            }.addListener(object : AnimatorListenerAdapter() {
+                override fun onAnimationEnd(animation: Animator) {
+                    searchInput.visibility = View.GONE
+                }
+            })
+        } else {
+
+            searchInput.visibility = View.VISIBLE
+            ObjectAnimator.ofFloat(searchInput, "alpha", 0f, 1f).apply {
+                duration = 300
+                start()
+            }
+        }
+        isSearchOpen = !isSearchOpen
+    }
+
+    private fun initBottomMenu() {
+        binding.cartBtn.setOnClickListener { startActivity(Intent(this@MainActivity, CartActivity::class.java)) }
+        binding.filterBtn.setOnClickListener { startActivity(Intent(this@MainActivity, FilterActivity::class.java)) }
+        binding.userBtn.setOnClickListener { startActivity(Intent(this@MainActivity, ProfileActivity::class.java)) }
     }
 
     private fun initBanner() {
@@ -78,4 +131,6 @@ class MainActivity : BaseActivity() {
         })
         viewModel.loadFeatured()
     }
+
+
 }

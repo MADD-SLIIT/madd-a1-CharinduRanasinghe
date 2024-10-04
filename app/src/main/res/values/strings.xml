@@ -18,4 +18,5 @@
     <string name="welcome_subtitle">Welcome back to healthy food central</string>
     <string name="enter_mobile">Enter Mobile</string>
     <string name="signup">Signup</string>
+    <string name="search">Search</string>
 </resources>

@@ -15,6 +15,18 @@
         android:theme="@style/Theme.NutriShop"
         tools:targetApi="31">
         <activity
+            android:name=".activity.CategoriesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.FruitsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.FilterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.CartActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.DetailActivity"
             android:exported="false" />
         <activity
@@ -51,6 +63,10 @@
         <activity
             android:name=".activity.BaseActivity"
             android:exported="false" />
+        <activity
+            android:name=".activity.ProfileActivity"
+            android:exported="false"
+            android:theme="@style/Theme.NutriShop" />
     </application>
 
 </manifest>

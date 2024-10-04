@@ -1,6 +1,7 @@
 package com.example.nutrishop.Adapter
 
 import android.content.Context
+import android.content.Intent
 import android.content.res.ColorStateList
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.nutrishop.Model.CategoriesModel
 import com.example.nutrishop.R
+import com.example.nutrishop.activity.FruitsActivity
 import com.example.nutrishop.databinding.ViewholderCatBinding
 
 class CatAdapter(val items: MutableList<CategoriesModel>) :
@@ -34,16 +36,25 @@ class CatAdapter(val items: MutableList<CategoriesModel>) :
         val item = items[position]
         holder.binding.title.text = item.title
 
+
         Glide.with(holder.itemView.context)
             .load(item.picUrl)
             .into(holder.binding.pic)
 
         holder.binding.root.setOnClickListener {
-            lastSelectedPosition = selectedPosition
-            selectedPosition = position
-            notifyItemChanged(lastSelectedPosition)
-            notifyItemChanged(selectedPosition)
-        }
+            if (selectedPosition == position) {
+                // This is a second click on the already selected item
+                if (item.title.equals("Fruits", ignoreCase = true)) {
+                    val intent = Intent(context, FruitsActivity::class.java)
+                    context.startActivity(intent)
+                }
+            } else {
+                // Update selected position and refresh items
+                selectedPosition = position
+                notifyDataSetChanged()
+            }
+            }
+
 
         holder.binding.title.setTextColor(context.resources.getColor(R.color.white))
         if (selectedPosition == position) {
